@@ -8,6 +8,10 @@ Vue.config.productionTip = false;
 
 import 'swiper/dist/css/swiper.min.css'
 
+import computed_rem from '.viewPort/rem'
+
+computed_rem()
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
