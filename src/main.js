@@ -6,11 +6,7 @@ import App from './App'
 Vue.config.productionTip = false;
 
 
-import 'swiper/dist/css/swiper.min.css'
-
-import computed_rem from '.viewPort/rem'
-
-computed_rem()
+import './modules/config'
 
 /* eslint-disable no-new */
 new Vue({

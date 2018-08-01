@@ -1,18 +1,25 @@
 <template>
     <div id="app-header">
-        8888
+        <app-header-top></app-header-top>
+        <app-header-banner></app-header-banner>
     </div>
 </template>  
 
 <script>
+    import AppHeaderTop from './AppTop'
+    import AppHeaderBanner from './headerBanner'
+
     export default {
-        name:'AppHeader'
+        name:'AppHeader',
+        components:{
+            AppHeaderTop,
+            AppHeaderBanner
+
+        }
     }
 
 </script> 
 
-<style >
-    #app-header{width:100px;height:200px;background:red;}
-
-
+<style lang="scss">
+   
 </style>
