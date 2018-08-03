@@ -1,5 +1,5 @@
 <template>
-    <div ref = "el" id="app-header-banner" class="swiper-container">
+    <div ref = "el" id="app-center-banner" class="swiper-container">
         <div class="swiper-wrapper">
         <div
             v-for = " (banner, i) in banners "
@@ -16,7 +16,7 @@
     import Vue from 'vue'
     import Swiper from 'swiper'
     export default{
-        name:'AppHeaderBanner',
+        name:'AppCenterBanner',
         data(){
             return {
                 banners:[]
@@ -35,6 +35,12 @@
                     this.banners = res.data.data.container.floor[0].content
                     Vue.nextTick(() => {
                          new Swiper(this.$refs.el, {
+                            speed:2000,
+                            autoplay: {
+                                delay: 2000,
+                                disableOnInteraction: false,
+                                waitForTransition: false,
+                            },
                              pagination: {
                                 el: '.swiper-pagination'                        
                              }
@@ -51,7 +57,7 @@
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
  .swiper-wrapper {
         width: 100%;
         height: 1.875rem;
@@ -64,9 +70,6 @@
         span {
             background: blue;
         }
-        /* width: 5px; height: 5px;
-        &.swiper-pagination-bullet-active {
-            background: #fff;
-        } */
+       
     }
 </style>

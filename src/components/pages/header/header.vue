@@ -1,25 +1,27 @@
 <template>
     <div id="app-header">
         <app-header-top></app-header-top>
-        <app-header-banner></app-header-banner>
+        <app-header-search></app-header-search>
+        <app-header-nav></app-header-nav>
     </div>
 </template>  
 
 <script>
     import AppHeaderTop from './AppTop'
-    import AppHeaderBanner from './headerBanner'
-
+     import AppHeaderSearch from './AppSearch'
+      import AppHeaderNav from './AppNav'
+   
     export default {
         name:'AppHeader',
         components:{
             AppHeaderTop,
-            AppHeaderBanner
-
+            AppHeaderSearch,
+            AppHeaderNav
         }
     }
 
 </script> 
 
-<style lang="scss">
+<style lang="scss" scoped>
    
 </style>
