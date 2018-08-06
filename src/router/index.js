@@ -2,6 +2,7 @@
 import Vue  from 'vue'
 
 import VueRouter from 'vue-router'
+import VueCookies from 'vue-cookies'
 
 Vue.use(VueRouter)
 
@@ -15,13 +16,14 @@ import LoginRegister from '../components/pages/login-register/loginRegister.vue'
 import LoginA from '../components/pages/login-register/login-a/login-a.vue'
 import LoginB from '../components/pages/login-register/login-b/login-b.vue'
 import Register from '../components/pages/login-register/register/register.vue'
+import store from '../store'
 
 // 路由 表
 const routes = [
     {   path: '/mine', name: 'mine', component: Mine },
     {   path: '/classify', name: 'classify', component: Classify },
     {   path: '/', name: 'header', component: Header },
-    {   path: '/shopping', name: 'Shopping', component: Shopping},
+    {   path: '/shopping', name: 'shopping', component: Shopping},
     {   path: '/message', name: 'message', component: Message },
     {   path: '/not-found', name: 'not-found', component: NotFound },
     {
@@ -53,5 +55,25 @@ const router = new VueRouter({
     mode: 'history',
     routes
 })
+//全局路由守卫
+
+let need_user_state = [ 'message','shopping']
+
+router.beforeEach((to, from ,next) => {
+    //是否需要判断登陆状态
+    let need_us = need_user_state.some(name => to.name === name)
+    let aa = VueCookies.get('phone');
+    if ( need_us && !aa ) {
+        next('/login-register');
+        return false;
+    }
+    next();
+})
+
+//md5
+
+import md5 from 'js-md5'
+
+Vue.prototype.md5 = md5
 
 export default router

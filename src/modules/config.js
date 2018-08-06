@@ -15,9 +15,12 @@ computed_rem()
 import axios from 'axios'
 Vue.prototype.$http = axios
 
+import './ui-components'
+
 //filters
 
 // import './filters'
 
-
+import VueCookies from 'vue-cookies'
+Vue.use(VueCookies)
 Vue.config.productionTip = false

@@ -10,14 +10,35 @@
                 <router-link replace active-class="login_active" :to="{ name: 'login-a' }" class="tab-link1 button">帐号密码登陆</router-link>
                 <router-link replace active-class="login_active" :to="{ name: 'login-b' }" class="tab-link2 button">短信验证登录</router-link>
             </div>
-
-            <router-view></router-view>
         </div>
+        <router-view ></router-view>
+        <div class="new">
+            <a class="zhuce">新用户注册</a>
+            <a class="forget">忘记密码</a>  
+        </div>
+        <h1 class="login_three">第三方登录</h1>
+        <a class="login_qq"><img src="//img2.ch999img.com/m/static/assets/qq.7df9dcd2828ad5eaeee0e76ce8f7d917.png"/></a>
     </div>
 </template>
 <script>
+
 export default {
-    name: 'app-login-register'
+    name: 'app-login-register',
+    data(){
+        return { 
+         } 
+    },
+    computed:{
+        login_red(){
+            return this.$store.state.number.login_red;
+        }
+    },
+    mounted(){
+
+    },
+    watch:{
+        
+    }
 }
 </script>
 <style lang="scss" scoped>
@@ -60,6 +81,31 @@ export default {
     }
     .login_active{
         color:#c80f1e;
+    }
+    .new{
+        display:flex;
+        width:90%;
+        margin:0 5%;
+        height:0.5rem;
+        justify-content:space-between;
+        a{
+        height:0.5rem;
+        line-height:0.5rem;
+        font-size:0.16rem;
+        }
+    }
+    .login_three{ 
+        width:100%;
+        margin-top:0.5rem;
+        text-align:center;
+        color:#ccc;
+        font-size:0.15rem;
+    }
+    .login_qq img{
+        display:block;
+        width:0.34rem;
+        height:0.34rem;
+        margin:0.1rem auto;
     }
 
 

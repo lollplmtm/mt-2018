@@ -1,7 +1,8 @@
 <template>
     <div class="app-classify page">
         app-classify
-         <app-footer></app-footer>
+        <app-footer></app-footer>
+        
     </div>
 </template>
 <script>

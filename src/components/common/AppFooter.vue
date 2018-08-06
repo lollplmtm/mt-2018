@@ -6,6 +6,7 @@
             <i :class="item.name "  ></i>    
             <span class="tab-label"  >{{item.title}}</span>
           </router-link>
+          <span class="sull">0</span>
         </nav>
     </footer>
 
@@ -22,7 +23,7 @@ export default{
                 {path:'/',name:'fa fa-home'},
                 {path:'/classify',name:'fa fa-sort-amount-asc'},
                 {path:'/message',name:'fa fa-commenting'},
-                {path:'/login-register',name:'fa fa-cart-plus'},
+                {path:'/shopping',name:'fa fa-cart-plus'},
                 {path:'/mine',name:'fa fa-user-o '}
             ]
         }
@@ -42,7 +43,6 @@ export default{
     },
     created (){
         this.foot();
-        
     }
 }
 
@@ -50,6 +50,8 @@ export default{
 </script> 
 <style  lang="scss" scoped>
     .bar{
+        background:#fff;
+        z-index:1000;
         display:flex;
         position:fixed;
         height:0.6rem;
@@ -59,15 +61,29 @@ export default{
         justify-content:space-between;
         align-items:center;
         .tab-item{
-        display:flex;
-        height:0.60rem;
-        flex-direction:column;
-        flex:1;
-        text-align:center;
+            display:flex;
+            height:0.60rem;
+            padding-top:0.2rem;
+            flex-direction:column;
+            flex:1;
+            text-align:center;
         }
         i{width:0.26rem;margin:0 auto;font-size:0.2rem;}
+        .sull{
+            position: absolute;
+            right:0.91rem;
+            top: 0.14rem;
+            padding: 0 0.04rem;
+            border-radius: 100%;
+            background: #c80f1e;
+            color: #fff;
+            font-size: 0.12rem;
+            height: 0.14rem;
+            line-height: 0.14rem;
+ 
+        }
     }
     .active{
-        color:red;
+        color: #c80f1e;
     }
 </style>
