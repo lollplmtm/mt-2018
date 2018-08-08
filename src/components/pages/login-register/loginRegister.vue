@@ -65,6 +65,7 @@ export default {
         display:flex;
         padding-left:16%;
         padding-right:16%;
+        margin-top: 0.5rem;
         .tab-link1{
         flex:1;
         border-right:1px solid #000;

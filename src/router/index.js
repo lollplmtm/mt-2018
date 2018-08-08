@@ -9,6 +9,7 @@ Vue.use(VueRouter)
 import Header from '../components/pages/header/header.vue'
 import NotFound from '../components/pages/not-found/not-found.vue'
 import Classify from '../components/pages/classify/classify.vue'
+import ClassifyOne from '../components/pages/classify/classify-one.vue'
 import Mine from '../components/pages/mine/mine.vue'
 import Message from '../components/pages/message/message.vue'
 import Shopping from '../components/pages/shopping/shopping.vue'
@@ -22,6 +23,7 @@ import store from '../store'
 const routes = [
     {   path: '/mine', name: 'mine', component: Mine },
     {   path: '/classify', name: 'classify', component: Classify },
+    {   path: '/classify-one', name: 'classify-one', component: ClassifyOne },
     {   path: '/', name: 'header', component: Header },
     {   path: '/shopping', name: 'shopping', component: Shopping},
     {   path: '/message', name: 'message', component: Message },

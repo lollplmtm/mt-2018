@@ -46,206 +46,200 @@
 </template> 
 <script>
 export default {
-    name: 'app-mine',
-    data(){
-        return {
-            datas:[],
-            users:[],
-            propertys:[]
-        }
-    },
-    methods:{
-         getData () {
-            this.$http.get('/dt/web/api/member/index/v1?v=0.5751667915589536'
-            ).then(res => {
-                this.datas = res.data.data.menu;
-                this.propertys = res.data.data.property;
-                this.users = res.data.data.user;
-            })
-        }
-    },
-    created () {
-      this.getData()
+  name: "app-mine",
+  data() {
+    return {
+      datas: [],
+      users: [],
+      propertys: []
+    };
+  },
+  methods: {
+    getData() {
+      this.$http
+        .get("/dt/web/api/member/index/v1?v=0.5751667915589536")
+        .then(res => {
+          this.datas = res.data.data.menu;
+          this.propertys = res.data.data.property;
+          this.users = res.data.data.user;
+        });
+    }
+  },
+  created() {
+    this.getData();
   }
-}
+};
 </script>
 
 <style lang="scss">
-    .navs{margin-bottom:0.8rem;}
-    .data{
-        border-radius: 0.1rem;
-        box-shadow: 0 0.02rem 0.05rem #000;
-        width:90%;
-        margin: 0 5%;
-        margin-top:0.6rem;
-        .one{
-            height:0.5rem;
-            display:flex;
-            text-align:center;
-            border-bottom:1px solid #ccc;
-            justify-content:space-between;
-            a{  
-                line-height:0.5rem;
-                display:flex;
-                font-size:0.16rem;
-                width:30%;
-                color:#ccc;
-                img{
-                    height:0.2rem;
-                    width:0.16rem;
-                    margin:0.15rem 0;
-                    line-height:0.5rem;
-                    margin-left:0.1rem;
-                }
-            }
-
-            h1{
-                line-height:0.5rem;
-                font-size:0.16rem;
-                width:24%;
-            }
-        }
-        .two{
-            display:flex;
-            padding:0.01rem 5%;
-            flex-wrap:wrap;
-            li{
-                width:24%;
-                display:flex;
-                height:0.8rem;
-                text-align:center;
-                flex-direction:column;
-                justify-content:space-between;
-
-                .tp{
-                    width:0.24rem;
-                    margin:0 auto;
-                    height:0.24rem;
-                    margin-top:0.2rem;
-                }
-                .bm{
-                   
-                    line-height:0.4rem;
-                    font-size:0.1rem;
-                }
-
-            }
-        }
-        
+.navs {
+  margin-bottom: 0.8rem;
+}
+.data {
+  border-radius: 0.1rem;
+  box-shadow: 0 0.02rem 0.05rem #000;
+  width: 90%;
+  margin: 0 5%;
+  margin-top: 0.6rem;
+  .one {
+    height: 0.5rem;
+    display: flex;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    justify-content: space-between;
+    a {
+      line-height: 0.5rem;
+      display: flex;
+      font-size: 0.16rem;
+      width: 30%;
+      color: #ccc;
+      img {
+        height: 0.2rem;
+        width: 0.16rem;
+        margin: 0.15rem 0;
+        line-height: 0.5rem;
+        margin-left: 0.1rem;
+      }
     }
-    .top{
-        z-index:1000;
-           height:0.5rem;
-        font-size:0.16rem;
-        line-height:0.5rem;
-          display:flex;
-        text-align:center;
-           background:#D90000;
-        color:#fff;
-        position:fixed;
-          top:0;
-        width:100%;
-        .goback{
-            flex:1;
-            line-height:0.5rem;
-        }
-        .set{
-            font-size:0.16rem;
-            flex:2;
-            color:#fff;
-        }
-        .username{
-            flex:7;
-        }
+
+    h1 {
+      line-height: 0.5rem;
+      font-size: 0.16rem;
+      width: 24%;
     }
-    .users{
-        width:90%;
-        margin: 0.1rem 5%;
-        margin-top:0.6rem;
-        height:1.8rem;
-        border-radius: 0.1rem;
-        box-shadow: 0 0.02rem 0.05rem #000;
-        background: #fff;        
-        padding: 0 0.1rem;
-        position: relative; 
-        .shang{
-            display:flex;
-            height:1rem;
-            padding:0.2rem 0.1rem;
-            .icon{
-                width: 0.7rem;
-                height: 0.7rem;
-                border-radius: 100%;
-                border: 3px solid #fff;
-                box-shadow: 0 0.02rem 0.05rem #ccc;
-                margin-right: 0.1rem;
-                background:url("https://img2.ch999img.com//images/usericon.png");
-                background-position: 50%;
-                background-repeat: no-repeat;
-                background-size: contain;
-                
- 
-            }
-            .user_grade{
-                height: 0.7rem;
-                padding-left:0.1rem;
-                .user_phone{
-                    font-size:0.16rem;
-                    line-height:0.4rem;
-                    height:0.4rem;
-                    color:#000;
-                }
-                .vip{
-                    font-size:0.14rem;
-                    line-height:0.2rem;
-                    height:0.3rem;
-                    display:flex;
-                    .qt,.wx{
-                        margin-right:0.2rem;
-                        display:flex;
-                    }
-                    .qt img{
-                        width: 0.78rem;
-                        height: 0.20rem;
-                        margin-right: 0.03rem;
-                    }
-                    .wx img{
-                        width: 0.2rem;
-                        height: 0.2rem;
-                        margin-right: 0.03rem;
- 
-                    }
+  }
+  .two {
+    display: flex;
+    padding: 0.01rem 5%;
+    flex-wrap: wrap;
+    li {
+      width: 24%;
+      display: flex;
+      height: 0.8rem;
+      text-align: center;
+      flex-direction: column;
+      justify-content: space-between;
 
-                }
-            }
-        }
-        .xia{
-            display:flex;
-            padding:0.01rem 5%;
-            li{
-                width:24%;
-                display:flex;
-                height:0.8rem;
-                text-align:center;
-                flex-direction:column;
-                justify-content:space-between;
-
-                .xia_top{
-                    width:0.25rem;
-                    margin:0 auto;
-                    height:0.2rem;
-                    margin-top:0.24rem;
-                    font-size:0.1rem;
-                }
-                .xia_bom{
-                   
-                    line-height:0.2rem;
-                    font-size:0.1rem;
-                    margin-bottom:0.2rem;
-                }
-
-            } 
-        }
-
+      .tp {
+        width: 0.24rem;
+        margin: 0 auto;
+        height: 0.24rem;
+        margin-top: 0.2rem;
+      }
+      .bm {
+        line-height: 0.4rem;
+        font-size: 0.1rem;
+      }
     }
+  }
+}
+.top {
+  z-index: 1000;
+  height: 0.5rem;
+  font-size: 0.16rem;
+  line-height: 0.5rem;
+  display: flex;
+  text-align: center;
+  background: #d90000;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  .goback {
+    flex: 1;
+    line-height: 0.5rem;
+  }
+  .set {
+    font-size: 0.16rem;
+    flex: 2;
+    color: #fff;
+  }
+  .username {
+    flex: 7;
+  }
+}
+.users {
+  width: 90%;
+  margin: 0.1rem 5%;
+  margin-top: 0.6rem;
+  height: 1.8rem;
+  border-radius: 0.1rem;
+  box-shadow: 0 0.02rem 0.05rem #000;
+  background: #fff;
+  padding: 0 0.1rem;
+  position: relative;
+  .shang {
+    display: flex;
+    height: 1rem;
+    padding: 0.2rem 0.1rem;
+    .icon {
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 100%;
+      border: 3px solid #fff;
+      box-shadow: 0 0.02rem 0.05rem #ccc;
+      margin-right: 0.1rem;
+      background: url("https://img2.ch999img.com//images/usericon.png");
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .user_grade {
+      height: 0.7rem;
+      padding-left: 0.1rem;
+      .user_phone {
+        font-size: 0.16rem;
+        line-height: 0.4rem;
+        height: 0.4rem;
+        color: #000;
+      }
+      .vip {
+        font-size: 0.14rem;
+        line-height: 0.2rem;
+        height: 0.3rem;
+        display: flex;
+        .qt,
+        .wx {
+          margin-right: 0.2rem;
+          display: flex;
+        }
+        .qt img {
+          width: 0.78rem;
+          height: 0.2rem;
+          margin-right: 0.03rem;
+        }
+        .wx img {
+          width: 0.2rem;
+          height: 0.2rem;
+          margin-right: 0.03rem;
+        }
+      }
+    }
+  }
+  .xia {
+    display: flex;
+    padding: 0.01rem 5%;
+    li {
+      width: 24%;
+      display: flex;
+      height: 0.8rem;
+      text-align: center;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .xia_top {
+        width: 0.25rem;
+        margin: 0 auto;
+        height: 0.2rem;
+        margin-top: 0.24rem;
+        font-size: 0.1rem;
+      }
+      .xia_bom {
+        line-height: 0.2rem;
+        font-size: 0.1rem;
+        margin-bottom: 0.2rem;
+      }
+    }
+  }
+}
 </style>

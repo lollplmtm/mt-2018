@@ -11,20 +11,20 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-        '/dt':{
-            target:'https://m.9ji.com',
-            changeOrigin:true,
-            pathRewrite:{
-                '^/dt': ''
-            }
-        },
-        '/mz':{
-            target:'https://m.maizuo.com',
-            changeOrigin:true,
-            pathRewrite:{
-                '^/mz': ''
-            }
+      '/dt':{
+        target:'https://m.9ji.com',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/dt': ''
         }
+      },
+      '/mz':{
+        target:'https://m.maizuo.com',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/mz': ''
+        }
+      }
     },
 
     // Various Dev Server settings
